@@ -1,0 +1,77 @@
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_merere-
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: db
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    ports:
+      - "3315:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - miRed
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "--silent"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+
+  backend:
+    build:
+      context: ./recluter-back
+    container_name: recluter-back-
+    environment:
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_USER: mysql
+      DATABASE_PASSWORD: mysql
+      DATABASE_NAME: db
+    env_file:
+      - ./recluter-back/.env
+    depends_on:
+      - mysql
+      - procesamiento
+    ports:
+      - "3012:3006"
+    networks:
+      - miRed
+
+  frontend:
+    build:
+      context: ./recluter-front
+    container_name: recluter-front-
+    env_file:
+      - ./recluter-front/.env
+    ports:
+      - "3010:3000"
+    depends_on:
+      - backend
+    networks:
+      - miRed
+
+  procesamiento:
+    build: 
+      context: ./procesamiento
+      target: dev
+    healthcheck: 
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    volumes:
+     - ./procesamiento:/usr/local/app
+    ports:
+      - "5050:5050"
+
+networks:
+  miRed:
+
+volumes:
+  mysql_data:

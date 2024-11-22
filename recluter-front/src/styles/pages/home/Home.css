@@ -1,0 +1,1448 @@
+/* Estilos generales para elementos comunes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 973px) {
+  .fullPageContainer-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 24px;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .narrowContent-home {
+    width: 30%;
+    height: 90%;
+    text-align: left;
+    padding: 0 30px;
+    position: relative;
+  }
+
+  .wideContent-home {
+    width: 70%;
+    height: 80%;
+    text-align: center;
+    font-weight: 500;
+    padding: 0 20px;
+  }
+
+  .heading-home {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .paragraph-home {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 70px;
+  }
+
+  .button-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 313px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+  }
+
+  .buttonText-home {
+    margin-left: 10px;
+  }
+
+  .inputEmail-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 313px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .image-home {
+    max-width: 100%;
+    width: 1200px;
+    height: auto;
+  }
+
+  .topSection-home {
+    padding: 50px;
+    box-sizing: border-box;
+  }
+
+  .topHeading-home {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .cardContainer-home {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-home {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cardCover-home {
+    background-color: #91C3FD;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .cardActions-home {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border: none;
+  }
+
+  .cardButton-home {
+    background-color: white;
+    color: #0288d1;
+    padding: 10px 20px;
+    border: 1px solid #0288d1;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .bottomSection-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 538px;
+    background-color: #F5B8AC;
+    border-radius: 5px;
+  }
+
+  .bottomHeading-home {
+    font-size: 24px;
+    margin-bottom: -140px;
+    margin-left: -30px;
+    width: 120%;
+  }
+
+  .bottomContent-home {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .steps-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 120%;
+  }
+
+  .step-home {
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: -170px;
+    position: relative;
+    left: 0;
+    /* Default value */
+  }
+
+  .stepNumber-home {
+    font-size: 128px;
+    margin-right: 10px;
+    margin-bottom: -50px;
+  }
+
+  .stepText-home {
+    font-size: 18px;
+    padding-top: 60px;
+  }
+
+  .reviews-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+    width: 400px;
+  }
+
+  .reviewImage-home {
+    max-width: 80%;
+    position: absolute;
+  }
+
+  .reviewImage1-home {
+    top: -10px;
+    left: 360px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    top: 250px;
+    left: 430px;
+    z-index: 3;
+  }
+
+  .reviewImage3-home {
+    top: 40px;
+    left: 180px;
+    z-index: 1;
+  }
+
+  .customDivider-home {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 313px;
+    position: relative;
+  }
+
+  .customDivider-home::before,
+  .customDivider-home::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+
+  .customDivider-home:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+
+  .customDivider-home:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+
+  .antCardActions-home {
+    border: none;
+  }
+}
+
+/* Estilos para pantallas grandes solo imagenes*/
+@media (min-width: 972px) and (max-width: 1100px) {
+
+  .reviewImage1-home {
+    top: 10px;
+    left: 170px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    top: 260px;
+    left: 230px;
+    z-index: 3;
+  }
+
+  .reviewImage3-home {
+    top: 40px;
+    left: 0px;
+    z-index: 1;
+  }
+
+}
+
+/* Estilos para pantallas grandes MIN */
+@media (min-width: 973px) and (max-width: 1109px) {
+  .fullPageContainer-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 24px;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  .narrowContent-home {
+    width: 30%;
+    height: 90%;
+    text-align: left;
+    padding: 0 30px;
+    position: relative;
+  }
+
+  .wideContent-home {
+    width: 70%;
+    height: 80%;
+    text-align: center;
+    font-weight: 500;
+    padding: 0 20px;
+  }
+
+  .heading-home {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .paragraph-home {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .buttonContainer-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Asegura que los botones estén uno debajo del otro */
+    width: 100%;
+    margin-top: 20px;
+    /* Ajusta el espacio superior según sea necesario */
+  }
+
+  .button-home {
+    width: 100%;
+    /* Ajusta la anchura al 100% del contenedor */
+    max-width: 313px;
+    /* Asegura un tamaño máximo */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+    text-align: center;
+  }
+
+  .buttonText-home {
+    margin-left: 10px;
+  }
+
+  .inputEmail-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* Ajusta la anchura al 100% del contenedor */
+    max-width: 313px;
+    /* Asegura un tamaño máximo */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .image-home {
+    max-width: 100%;
+    width: 1200px;
+    height: auto;
+  }
+
+  .topSection-home {
+    padding: 50px;
+    box-sizing: border-box;
+  }
+
+  .topHeading-home {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .cardContainer-home {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-home {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cardCover-home {
+    background-color: #91C3FD;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .cardActions-home {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border: none;
+  }
+
+  .cardButton-home {
+    background-color: white;
+    color: #0288d1;
+    padding: 10px 20px;
+    border: 1px solid #0288d1;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .bottomSection-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 538px;
+    background-color: #F5B8AC;
+    border-radius: 5px;
+  }
+
+  .bottomHeading-home {
+    font-size: 24px;
+    margin-bottom: -160px;
+    margin-left: -40px;
+    width: 150%;
+  }
+
+  .bottomContent-home {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .steps-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 150%;
+  }
+
+  .step-home {
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: -170px;
+    position: relative;
+    left: 0;
+    /* Default value */
+  }
+
+  .stepNumber-home {
+    font-size: 128px;
+    margin-right: 10px;
+    margin-bottom: -50px;
+  }
+
+  .stepText-home {
+    font-size: 18px;
+    padding-top: 60px;
+  }
+
+  .reviews-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+    width: 400px;
+  }
+
+  .reviewImage-home {
+    max-width: 80%;
+    position: absolute;
+  }
+
+  .reviewImage1-home {
+    top: 20px;
+    left: 300px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    top: 240px;
+    left: 350px;
+    z-index: 3;
+    width: 300px;
+  }
+
+  .reviewImage3-home {
+    top: 40px;
+    left: 150px;
+    z-index: 1;
+  }
+
+  .customDivider-home {
+    display: flex;
+    padding-right: 210px;
+    color: white;
+    margin: 20px 100px;
+    width: 100%;
+    /* Ajusta la anchura al 100% del contenedor */
+    max-width: 100%;
+    /* Asegura un tamaño máximo */
+    position: relative;
+  }
+
+  .customDivider-home::before,
+  .customDivider-home::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+
+  .customDivider-home:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+
+  .customDivider-home:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+
+  .antCardActions-home {
+    border: none;
+  }
+}
+
+/*Estilos para BOTONES pantallas grandes MIN*/
+@media (min-width: 973px) and (max-width: 1029px) {
+  .buttonContainer-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Asegura que los botones estén uno debajo del otro */
+    width: 100%;
+    margin-top: 20px;
+    /* Ajusta el espacio superior según sea necesario */
+  }
+
+  .button-home {
+    width: 90%;
+    /* Ajusta la anchura al 90% del contenedor */
+    max-width: 280px;
+    /* Asegura un tamaño máximo */
+    padding: 8px;
+    /* Reduce el padding */
+    margin-bottom: 8px;
+    /* Reduce el margen inferior */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    /* Reduce el tamaño de la fuente */
+    background-color: white;
+    text-align: center;
+  }
+
+  .buttonText-home {
+    margin-left: 10px;
+  }
+
+  .inputEmail-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    /* Ajusta la anchura al 90% del contenedor */
+    max-width: 280px;
+    /* Asegura un tamaño máximo */
+    padding: 8px;
+    /* Reduce el padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    /* Reduce el tamaño de la fuente */
+    margin-bottom: 8px;
+    /* Reduce el margen inferior */
+  }
+
+  .customDivider-home {
+    display: flex;
+    padding-right: 190px;
+    color: white;
+    margin: 20px 90px;
+    width: 100%;
+    /* Ajusta la anchura al 100% del contenedor */
+    max-width: 100%;
+    /* Asegura un tamaño máximo */
+    position: relative;
+  }
+
+  .customDivider-home::before,
+  .customDivider-home::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+
+  .customDivider-home:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+
+  .customDivider-home:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+}
+
+/* Estilos para pantallas medianas MAX */
+@media (min-width: 639px) and (max-width: 972px) {
+  .fullPageContainer-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Asegura que el contenedor sea al menos tan alto como la ventana gráfica */
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 24px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    /* Asegura que los elementos no se salgan del contenedor */
+  }
+
+  .narrowContent-home,
+  .wideContent-home {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Asegura que el padding no aumente el ancho del contenedor */
+  }
+
+  .heading-home {
+    font-size: 28px;
+    /* Misma fuente que pantallas grandes */
+    padding-top: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    /* Elimina márgenes que puedan causar overflow */
+    word-wrap: break-word;
+    /* Permite el ajuste de palabras largas */
+    white-space: normal;
+    /* Permite que las palabras se ajusten a múltiples líneas */
+  }
+
+  .paragraph-home {
+    font-size: 18px;
+    /* Misma fuente que pantallas grandes */
+    margin: 50px 0 70px 0;
+    /* Ajusta márgenes para evitar overflow */
+    text-align: center;
+    word-wrap: break-word;
+    /* Permite el ajuste de palabras largas */
+    white-space: normal;
+    /* Permite que las palabras se ajusten a múltiples líneas */
+  }
+
+  .bannerImage-home {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 20px auto 0 auto;
+    /* Mueve la imagen del banner hacia abajo */
+    display: block;
+  }
+
+  .buttonContainer-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Asegura que los botones estén uno debajo del otro */
+    width: 100%;
+    margin-top: 20px;
+    /* Ajusta el espacio superior según sea necesario */
+  }
+
+  .button-home {
+    width: 313px;
+    /* Misma anchura que pantallas grandes */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+    text-align: center;
+  }
+
+  .buttonText-home {
+    margin-left: 10px;
+  }
+
+  .inputEmail-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 313px;
+    /* Misma anchura que pantallas grandes */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .image-home {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .topSection-home {
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .topHeading-home {
+    font-size: 22px;
+    color: #023047;
+    margin-bottom: 20px;
+  }
+
+  .cardContainer-home {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-home {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cardCover-home {
+    background-color: #91C3FD;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .cardActions-home {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border: none;
+  }
+
+  .cardButton-home {
+    background-color: white;
+    color: #0288d1;
+    padding: 10px 20px;
+    border: 1px solid #0288d1;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .bottomSection-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    height: auto;
+    background-color: #F5B8AC;
+    border-radius: 5px;
+  }
+
+  .bottomHeading-home {
+    font-size: 22px;
+    color: #006497;
+    margin-bottom: 20px;
+  }
+
+  .bottomContent-home {
+    width: 100%;
+  }
+
+  .steps-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+  }
+
+  .step-home {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: -40px;
+    position: relative;
+    left: 0;
+    /* Default value */
+  }
+
+  .stepNumber-home {
+    font-size: 128px;
+    color: #006497;
+    margin-right: 10px;
+  }
+
+  .stepText-home {
+    font-size: 18px;
+    color: #023047;
+  }
+
+  .reviews-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+
+  .reviewImage-home {
+    max-width: 100%;
+    position: absolute;
+  }
+
+  .reviewImage1-home {
+    height: 300px;
+    width: 300px;
+    top: 40px;
+    left: 250px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    height: 180px;
+    width: 280px;
+    top: 220px;
+    left: 340px;
+    z-index: 3;
+  }
+
+  .reviewImage3-home {
+    height: 250px;
+    width: 250px;
+    top: 60px;
+    left: 100px;
+    z-index: 1;
+  }
+
+  .dividerContainer-home {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .customDivider-home {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 313px;
+    position: relative;
+  }
+
+  .customDivider-home::before,
+  .customDivider-home::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+
+  .customDivider-home:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+
+  .customDivider-home:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+
+  .antCardActions-home {
+    border: none;
+  }
+}
+
+/* Estilos para pantallas medianas MAX MEDIUM solo imagenes*/
+@media (min-width: 656px) and (max-width: 734px) {
+
+  .reviewImage1--home {
+    height: 300px;
+    width: 300px;
+    top: 20px;
+    left: 250px;
+    z-index: 2;
+  }
+
+  .reviewImage2--home {
+    height: 180px;
+    width: 280px;
+    top: 230px;
+    left: 310px;
+    z-index: 3;
+  }
+
+  .reviewImage3--home {
+    height: 250px;
+    width: 250px;
+    top: 40px;
+    left: 80px;
+    z-index: 1;
+  }
+
+}
+
+/* Estilos para pantallas medianas MAX MIN solo imagenes*/
+@media (min-width: 638px) and (max-width: 655px) {
+
+  .reviewImage1-home {
+    height: 280px;
+    width: 280px;
+    top: 20px;
+    left: 250px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    height: 180px;
+    width: 260px;
+    top: 230px;
+    left: 310px;
+    z-index: 3;
+  }
+
+  .reviewImage3-home {
+    height: 250px;
+    width: 200px;
+    top: 40px;
+    left: 80px;
+    z-index: 1;
+  }
+
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 479px) and (max-width: 638px) {
+  .fullPageContainer-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 24px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .narrowContent-home,
+  .wideContent-home {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .heading-home {
+    font-size: 28px;
+    padding-top: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .paragraph-home {
+    font-size: 18px;
+    margin: 50px 0 70px 0;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .bannerImage-home {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 20px auto 0 auto;
+    display: block;
+  }
+
+  .buttonContainer-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .button-home {
+    width: 313px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+    text-align: center;
+  }
+
+  .buttonText-home {
+    margin-left: 10px;
+  }
+
+  .inputEmail-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 313px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .image-home {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  .topSection-home {
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .topHeading-home {
+    font-size: 22px;
+    color: #023047;
+    margin-bottom: 20px;
+  }
+
+  .cardContainer-home {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-home {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .cardCover-home {
+    background-color: #91C3FD;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .cardActions-home {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border: none;
+  }
+
+  .cardButton-home {
+    background-color: white;
+    color: #0288d1;
+    padding: 10px 20px;
+    border: 1px solid #0288d1;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .bottomSection-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    height: auto;
+    background-color: #F5B8AC;
+    border-radius: 5px;
+  }
+
+  .bottomHeading-home {
+    font-size: 22px;
+    color: #006497;
+    margin-bottom: 20px;
+  }
+
+  .bottomContent-home {
+    width: 100%;
+  }
+
+  .steps-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+  }
+
+  .step-home {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: -40px;
+    position: relative;
+    left: 0.
+  }
+
+  .stepNumber-home {
+    font-size: 128px;
+    color: #006497;
+    margin-right: 10px;
+  }
+
+  .stepText-home {
+    font-size: 18px;
+    color: #023047;
+  }
+
+  .reviews-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+
+  .reviewImage-home {
+    max-width: 100%;
+    position: absolute;
+  }
+
+  .reviewImage1-home {
+    height: 350px;
+    width: 250px;
+    top: 10px;
+    left: 100px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    height: 280px;
+    width: 210px;
+    top: 140px;
+    left: 170px;
+    z-index: 3;
+  }
+
+  .reviewImage3-home {
+    height: 250px;
+    width: 200px;
+    top: 60px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .customDivider-home {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-right: 280px;
+    color: white;
+    margin: 20px 140px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .customDivider-home::before,
+  .customDivider-home::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+
+  .customDivider-home:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+
+  .customDivider-home:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+
+  .antCardActions-home {
+    border: none;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 478px) {
+  .fullPageContainer-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 24px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .narrowContent-home,
+  .wideContent-home {
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .heading-home {
+    font-size: 20px;
+    /* Reducir el tamaño de la fuente */
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    word-wrap: break-word;
+    /* Asegurar que las palabras largas se ajusten */
+    overflow-wrap: break-word;
+    /* Asegurar que las palabras largas se ajusten */
+    line-height: 1.2;
+    /* Ajustar la altura de la línea */
+  }
+
+  .paragraph-home {
+    font-size: 16px;
+    margin: 20px 0;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .bannerImage-home {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .button-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+  }
+
+  .buttonText-home {
+    margin-left: 10px;
+  }
+
+  .inputEmail-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .image-home {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .topSection-home {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .topHeading-home {
+    font-size: 20px;
+    color: #023047;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .cardContainer-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card-home {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 40px;
+  }
+
+  .cardCover-home {
+    background-color: #91C3FD;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .cardActions-home {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    border: none;
+  }
+
+  .cardButton-home {
+    background-color: white;
+    color: #0288d1;
+    padding: 10px 20px;
+    border: 1px solid #0288d1;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .bottomSection-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    height: auto;
+    background-color: #F5B8AC;
+    border-radius: 5px;
+  }
+
+  .bottomHeading-home {
+    font-size: 20px;
+    color: #006497;
+    margin-left: -20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .bottomContent-home {
+    width: 100%;
+  }
+
+  .steps-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .step-home {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .stepNumber-home {
+    font-size: 64px;
+    color: #006497;
+    margin-right: 10px;
+  }
+
+  .stepText-home {
+    font-size: 16px;
+    color: #023047;
+    margin-top: 20px;
+  }
+
+  .reviews-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+
+  .reviewImage-home {
+    max-width: 100%;
+    position: absolute;
+  }
+
+  .reviewImage1-home {
+    height: 270px;
+    width: 250px;
+    top: 10px;
+    left: 50px;
+    z-index: 2;
+  }
+
+  .reviewImage2-home {
+    height: 230px;
+    width: 210px;
+    top: 160px;
+    left: 110px;
+    z-index: 3;
+  }
+
+  .reviewImage3-home {
+    height: 189px;
+    width: 190px;
+    top: 40px;
+    left: 0px;
+    z-index: 1;
+  }
+
+  .customDivider-home {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 313px;
+    position: relative;
+  }
+
+  .customDivider-home::before,
+  .customDivider-home::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid white;
+  }
+
+  .customDivider-home:not(:empty)::before {
+    margin-right: 0.25em;
+  }
+
+  .customDivider-home:not(:empty)::after {
+    margin-left: 0.25em;
+  }
+
+  .antCardActions-home {
+    border: none;
+  }
+}

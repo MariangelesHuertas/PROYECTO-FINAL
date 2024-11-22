@@ -1,0 +1,97 @@
+.custom-input-company,
+.custom-select-company,
+.custom-button-company {
+  height: 44px;
+  border: 1px solid #0778B1;
+  width: 102px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.custom-button-company {
+  background-color: #006497;
+  color: white;
+}
+
+.company-container {
+  font-family: Arial, sans-serif;
+  /* max-width: 1300px; */
+  /* margin: auto; */
+  /* padding: 10px; */
+  /* background-color: red; */
+}
+.custom-card-width {
+    width: 982px;
+  }
+
+@media (max-width: 1200px) {
+  .company-search-bar {
+    flex-direction: column;
+  }
+
+  .company-search-bar input,
+  .company-search-bar select,
+  .company-search-bar button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .company-logo {
+    width: 140px;
+    height: 54px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-search-bar {
+    flex-direction: column;
+  }
+
+  .company-search-bar input,
+  .company-search-bar select,
+  .company-search-bar button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .company-logo {
+    width: 140px;
+    height: 54px;
+    margin-bottom: 10px;
+  }
+}
+
+.bg-pink-box {
+  background-color: #FBC8C8; /* Ajusta el color rosa aquí */
+  opacity: 20%;
+  height: 388px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.company-text {
+  padding-right: 160px;
+}
+
+.filter-component {
+  width: 20%; /* Asegura que el componente de filtro ocupe el 20% */
+}
+
+.company-cards {
+  width: 80%; /* Asegura que las tarjetas ocupen el 80% */
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre las tarjetas */
+}
+
+@media (max-width: 1200px) {
+  .filter-component {
+    width: 100%; /* Asegura que el componente de filtro ocupe el 100% en pantallas pequeñas */
+    margin-bottom: 16px; /* Espacio debajo del filtro en pantallas pequeñas */
+  }
+
+  .company-cards {
+    width: 100%; /* Asegura que las tarjetas ocupen el 100% en pantallas pequeñas */
+  }
+}

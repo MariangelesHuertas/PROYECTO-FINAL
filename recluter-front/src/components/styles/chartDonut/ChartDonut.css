@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+    .chart-text {
+      margin-top: 20px;
+      left: 50%;
+      transform: translate(-50%, -40%);
+      font-size: 16px; /* Ajusta el tamaño de la fuente si es necesario */
+    }
+  }
+  

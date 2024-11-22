@@ -1,0 +1,56 @@
+/* Information.css */
+.btn-inscribirte {
+  background-color: #81BFEC; /* Color original de fondo */
+  color: #00476D; /* Color original del texto */
+  border: 1px solid transparent; /* Borde original */
+}
+
+.btn-inscribirte:hover {
+  background-color: #4682b4 !important; /* Azul más oscuro al pasar el mouse */
+  color: #ffffff !important; /* Texto en blanco al pasar el mouse */
+  border: none !important;
+}
+
+.btn-inscribirte:active {
+  background-color: #81BFEC !important; /* Color original de fondo al presionar */
+  box-shadow: 0 0 0 2px #81BFEC !important; /* Sombra externa con color #81BFEC */
+  border-color: #81BFEC; /* Borde externo del color #81BFEC */
+  color: #00476D !important;
+}
+
+.btn-inscribirte.inscrito {
+  background-color: #FDBCB4; /* Color de fondo para el estado inscrito */
+  color: #00476D !important; /* Color del texto para el estado inscrito */
+}
+
+.btn-inscribirte.inscrito:hover {
+  background-color: #e69d94 !important; /* Color de fondo más oscuro para el estado inscrito al pasar el mouse */
+  color: #ffffff !important; /* Texto en blanco al pasar el mouse */
+  border: none !important;
+}
+
+.btn-inscribirte.inscrito:active {
+  background-color: #FDBCB4 !important; /* Color original de fondo al presionar */
+  box-shadow: 0 0 0 4px #81BFEC !important; /* Sombra externa con color #FDBCB4 */
+  border-color: #81BFEC; /* Borde externo del color #FDBCB4 */
+  color: #00476D !important;
+}
+
+.btn-guardar {
+  border-radius: 12px;
+  border: none;
+  background-color: transparent;
+  color: #00476D;
+}
+
+.btn-guardar:active {
+  box-shadow: 0 0 0 4px #81BFEC !important;
+}
+
+.btn-guardar.guardado {
+  color: #00476D;
+}
+
+.btn-guardar.guardado:active {
+  box-shadow: 0 0 0 4px #81BFEC !important;
+}

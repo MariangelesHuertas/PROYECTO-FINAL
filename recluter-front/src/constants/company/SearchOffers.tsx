@@ -1,0 +1,5 @@
+// constants/offer/SearchOffers.ts
+
+export const SEARCH_OFFERS_REQUEST = 'SEARCH_OFFERS_REQUEST';
+export const SEARCH_OFFERS_SUCCESS = 'SEARCH_OFFERS_SUCCESS';
+export const SEARCH_OFFERS_FAILURE = 'SEARCH_OFFERS_FAILURE';

@@ -1,0 +1,111 @@
+/* src/styles/alertFilter/AlertFilter.css */
+.custom-select-title .ant-select-selection-item {
+  font-size: 16px !important;
+}
+
+.alert-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-create-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: -8px;
+}
+
+.alert-filter-buttons {
+  display: flex;
+  justify-content: start;
+  gap: 4px;
+}
+
+.alert-filter-button,
+.alert-filter-select {
+  background-color: #fcfcfc;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  font-size: 16px;
+  font-weight: bold !important;
+  color: #52525b;
+  transition: all 0.3s ease;
+}
+
+/* Specific styles for the first filter button */
+.alert-filter-button:first-of-type {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.alert-filter-button:first-of-type:hover {
+  border-width: 2px;
+}
+
+/* Hover styles for all other buttons and selects */
+.alert-filter-button:not(:first-of-type):hover,
+.alert-filter-select:hover {
+  background-color: #E1E1E2;
+  border-color: #E1E1E2;
+}
+
+/* Active styles for all buttons and selects */
+.alert-filter-button:active,
+.alert-filter-select:active {
+  background-color: white !important;
+  border: none;
+  box-shadow: 0 0 0 4px #81BFEC;
+}
+
+.custom-select-title-tabs .ant-select-selection-item {
+  font-size: 16px !important;
+  font-weight: bold !important; /* Aplicar bold al texto */
+  color: #52525B;
+}
+
+@media (max-width: 700px) {
+  .alert-filter-container {
+    padding: 5px;
+  }
+
+  .alert-filter-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alert-create-button {
+    position: relative;
+    margin-top: 10px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .alert-filter-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    gap: 10px; /* Espacio entre los botones y selects en móviles */
+  }
+
+  .alert-filter-button,
+  .alert-filter-select {
+    width: 170px;
+    margin-left: 15px;
+    justify-content: center;
+  }
+
+  .alert-filter-button .anticon,
+  .alert-filter-select .anticon {
+    margin-right: 8px;
+  }
+
+  .alert-filter-button,
+  .alert-filter-select {
+    font-size: 14px;
+  }
+}

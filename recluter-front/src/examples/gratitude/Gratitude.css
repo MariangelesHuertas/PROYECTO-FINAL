@@ -1,0 +1,192 @@
+/* Importando la fuente Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+.gratitude-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #878B8B; /* Fondo gris oscuro */
+  padding: 20px;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.banner-gratitude {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* Ajustar según sea necesario */
+}
+
+.logo-gratitude {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 130px; /* Ajustar según sea necesario */
+}
+
+.banner-image-gratitude {
+  width: 100%;
+  height: auto;
+}
+
+.content-gratitude {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 700px; /* Ajustar según sea necesario */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000000; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.title-gratitude {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subtitle-gratitude {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.description-gratitude {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.event-date {
+  font-size: 12px;
+}
+
+.extra-information-gratitude {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.action-button-gratitude {
+  background-color: #3CBFF0;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 6.8px;
+  width: 200px;
+  font-size: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.my-events-button-gratitude {
+  background-color: #22234B;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: -5px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 200px;
+  font-size: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.action-button-gratitude:hover, .my-events-button-gratitude:hover {
+  background-color: #0056b3;
+}
+
+.footer-gratitude {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.share-text-gratitude {
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 50px;
+  color: #ffffff; 
+}
+
+.social-icons-gratitude {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.social-icons-gratitude img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Media query para pantallas extra extra grandes (2048px) */
+@media (min-width: 2048px) {
+  .banner-gratitude {
+    max-width: 1789px;
+  }
+
+  .logo-gratitude {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 330px; /* Ajustar según sea necesario */
+  }  
+
+  .content-gratitude {
+    max-width: 1789px;
+    padding: 50px;
+  }
+
+  .title-gratitude {
+    font-size: 64px;
+    font-weight: bold;
+  }
+
+  .subtitle-gratitude {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .description-gratitude {
+    font-size: 24px;
+  }
+
+  .event-date {
+    font-size: 20px;
+  }
+
+  .extra-information-gratitude {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  .action-button-gratitude {
+    font-size: 13px;
+    width: 300px;
+    height: 48px;
+  }
+
+  .my-events-button-gratitude {
+    font-size: 13px;
+    width: 300px;
+    height: 48px;
+  }
+
+  .share-text-gratitude {
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  .social-icons-gratitude img {
+    width: 50px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,76 @@
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+}
+
+.status-indicator {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 25%;
+  height: 25%;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Estilos para los diferentes tipos de avatar */
+.avatar-wrapper.type-1 .ant-avatar {
+  background-color: #F4F4F5;
+  border: 1px solid #E1E1E2;
+}
+
+.avatar-wrapper.type-2 .ant-avatar {
+  background-color: #F4F4F5;
+  border: 1px solid #E1E1E2;
+}
+
+.avatar-wrapper.type-2 .status-indicator {
+  background-color: #16A249;
+  border: 1px solid white;
+  margin-right: 4px;
+}
+
+.avatar-wrapper.type-3 .ant-avatar {
+  background-color: #F4F4F5;
+  border: 0.1px solid #E1E1E2;
+}
+
+.avatar-wrapper.type-3 .status-indicator {
+  background-color: #E1E1E2;
+  border: 1px solid white;
+  margin-right: 4px;
+}
+
+.avatar-wrapper.type-4 .ant-avatar {
+  background-color: #F4F4F5;
+  border: 2px solid #0778B1;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.avatar-label-wrapper {
+  margin: 15px;
+}
+
+.avatar-label-wrapper.text-left {
+  flex-direction: row-reverse;
+}
+
+.avatar-label-wrapper.text-left .ml-4 {
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+/* Tamaños de fuente específicos */
+.text-sm {
+  font-size: 12px;
+}
+
+.text-base {
+  font-size: 14px;
+}
+
+.text-lg {
+  font-size: 18px;
+}

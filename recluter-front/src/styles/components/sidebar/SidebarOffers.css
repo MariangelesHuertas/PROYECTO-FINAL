@@ -1,0 +1,19 @@
+.Btn-Offer-List-SidebarOffer span {
+  display: inline-block;
+  /* max-width: 100%; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Btn-Offer-List-SidebarOffer {
+  justify-content: left !important;
+}
+
+.Space-Btn-Offer-ButtonText .ant-space-item {
+  width: 100% !important;
+}
+
+.Space-Btn-Offer-ButtonText {
+  width: 100% !important;
+}

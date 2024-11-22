@@ -1,0 +1,35 @@
+.principal-nav-notify-buttonL {
+    background-color: #fff;
+    color: #006497;
+    border: 1px solid #006497;
+    margin-left: 10px;
+    width: 206px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .principal-nav-bell-buttonL {
+    background-color: #fff;
+    color: #006497;
+    border: 1px solid #006497;
+    margin-left: 10px;
+    height: 44px;
+    width: 44px !important;
+  }
+
+  .principal-nav-notify-buttonL:hover,
+  .principal-nav-bell-buttonL:hover {
+    border-width: 2px;
+    border-color: #006497 !important; /* Asegúrate de que se mantenga el color azul oscuro */
+    color: #006497 !important; /* Mantén el color de la letra */
+    background-color: #ffffff !important; /* Mantén el fondo blanco */
+  }
+
+  .principal-nav-notify-buttonL:active,
+  .principal-nav-bell-buttonL:active {
+    border: none !important; /* Elimina el borde */
+    box-shadow:  0 0 0 4px #81BFEC !important; /* Añade un sombreado exterior de un azul más claro */
+    color: #006497 !important; /* Mantén el color de la letra */
+    background-color: #fff !important; /* Mantén el fondo blanco */
+  }
+

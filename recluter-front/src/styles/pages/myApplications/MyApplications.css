@@ -1,0 +1,277 @@
+/* Employment.css */
+
+/* Estilos para las barras de búsqueda */
+.search-bar-merere {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  
+  .Input-Filter-Employment {
+    /* border: none; */
+    height: 44px;
+  }
+  
+  .Select-Filter-Employment {
+    height: 44px;
+  }
+  
+  .Button-Filter-Employment {
+    background-color: #006497;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estilos para las pestañas */
+  .tabs-merere {
+    padding: 20px;
+  }
+  
+  .tab-links-merere {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .tab-link-merere {
+    margin-right: 20px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #5F5F5F;
+    opacity: 0.7;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .tab-link-merere.active-tab-merere {
+    color: black;
+    font-weight: bold;
+    border-bottom: 2px solid #006497;
+  }
+  
+  .tab-links-merere::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .tab-content-merere {
+    padding: 10px 0;
+  }
+  
+  .icon-merere {
+    font-size: 24px;
+    color: #006497;
+    padding-right: 10px;
+  }
+  
+  /* Estilos de Responsividad */
+  @media (max-width: 1200px) {
+    .search-input-merere {
+      width: 300px;
+    }
+  
+    .select-input-merere {
+      width: 170px;
+      margin-left: 65px;
+    }
+  
+    .city-input-merere {
+      width: 170px;
+    }
+  
+    .logo-merere {
+      width: 140px;
+      height: 54px;
+      margin-bottom: -10px;
+    }
+  
+    .header-merere {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-merere {
+      margin-left: 0;
+      margin-bottom: 10px;
+      justify-content: flex-start;
+    }
+  
+    .action-buttons-merere {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .notify-button-merere {
+      margin-left: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .bell-button-merere {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 998px) {
+    .search-input-merere,
+    .select-input-merere,
+    .city-input-merere,
+    .search-button-merere {
+      width: 100%;
+      margin: 10px;
+    }
+  
+    .logo-merere {
+      width: 140px;
+      height: 54px;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 873px) {
+    .search-input-merere {
+      width: 200px;
+    }
+  
+    .select-input-merere {
+      width: 100px;
+      margin-left: 45px;
+    }
+  
+    .city-input-merere {
+      width: 120px;
+      margin-left: -20px;
+    }
+  }
+  
+  @media (max-width: 764px) {
+    .search-input-merere {
+      width: 170px;
+    }
+  
+    .select-input-merere {
+      width: 70px;
+      margin-left: 28px;
+    }
+  
+    .city-input-merere {
+      width: 90px;
+      margin-left: -42px;
+    }
+  
+    .header-merere {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-merere {
+      margin-left: 0;
+      margin-bottom: 10px;
+      justify-content: flex-start;
+    }
+  
+    .action-buttons-merere {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .notify-button-merere {
+      margin-left: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .bell-button-merere {
+      margin-left: 0;
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 631px) {
+    .search-input-merere {
+      width: 100px;
+    }
+  
+    .select-input-merere {
+      width: 70px;
+      margin-left: -30px;
+    }
+  
+    .city-input-merere {
+      width: 90px;
+      margin-left: -90px;
+    }
+  }
+  
+  @media (max-width: 585px) {
+    .search-input-merere,
+    .select-input-merere,
+    .city-input-merere,
+    .search-button-merere {
+      width: 100%;
+      margin: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-input-merere,
+    .select-input-merere,
+    .city-input-merere,
+    .search-button-merere {
+      width: 100%;
+      margin: 10px;
+    }
+  
+    .header-merere {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-merere {
+      margin-left: 0;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      justify-content: flex-start;
+    }
+  
+    .action-buttons-merere {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .notify-button-merere {
+      margin-left: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+  
+    .bell-button-merere {
+      margin-left: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
+  }
+  

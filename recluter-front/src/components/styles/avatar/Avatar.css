@@ -1,0 +1,84 @@
+.avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+  }
+  
+  .status-indicator {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  /* Estilos para los diferentes tipos de avatar */
+  .avatar-wrapper.type-1 .ant-avatar {
+    background-color: #F4F4F5;
+    border: 1px solid #E1E1E2;
+  }
+  
+  .avatar-wrapper.type-2 .ant-avatar {
+    background-color: #F4F4F5;
+    border: 1px solid #E1E1E2;
+  }
+  
+  .avatar-wrapper.type-2 .status-indicator {
+    background-color: #16A249;
+    border: 1px solid white;
+    margin-right: 4px;
+  }
+  
+  .avatar-wrapper.type-3 .ant-avatar {
+    background-color: #F4F4F5;
+    border: 0.1px solid #E1E1E2;
+  }
+  
+  .avatar-wrapper.type-3 .status-indicator {
+    background-color: #E1E1E2;
+    border: 1px solid white;
+    margin-right: 4px;
+  }
+  
+  .avatar-wrapper.type-4 .ant-avatar {
+    background-color: #F4F4F5;
+    border: 2px solid #0778B1;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+  }
+  
+  .avatar-wrapper.type-5 .ant-avatar {
+    background-color: #0778B1;
+    color: white;
+  }
+  
+  .avatar-wrapper.type-6 .ant-avatar {
+    background-color: #0778B1;
+    color: white;
+  }
+  
+  .avatar-wrapper.type-6 .status-indicator {
+    background-color: #16A249;
+    border: 1px solid white;
+  }
+  
+  .avatar-wrapper.type-7 .ant-avatar {
+    background-color: #0778B1;
+    color: white;
+  }
+  
+  .avatar-wrapper.type-7 .status-indicator {
+    background-color: #E1E1E2;
+    border: 1px solid white;
+  }
+  
+  .avatar-wrapper.type-8 .ant-avatar {
+    background-color: #0778B1;
+    color: white;
+    border: 2px solid #91C3FD;
+    border-bottom-color: #F4F4F5;
+    border-left-color: #F4F4F5;
+  }
+  

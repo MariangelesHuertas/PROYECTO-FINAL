@@ -1,0 +1,7 @@
+export * from './create-permiso.dto'
+export * from './edit-permiso.dto'
+export * from './permiso-tipo_usuario.dto'
+export * from './swagger-tipo_permiso.dto'
+export * from './swagger-tipo_permiso_formater.dto'
+export * from './update-permiso.dto'
+export * from './pagination-permiso.dto'

@@ -1,0 +1,148 @@
+/* src/styles/toggleSwitch/ToggleSwitch.css */
+
+.custom-switch {
+  background-color: #d9d9d9 !important;
+  border: 1px solid #d9d9d9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.custom-switch .ant-switch-handle {
+  background-color: white !important;
+  border: 1px solid white;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect for all switches */
+.custom-switch:hover {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 3px rgba(145, 195, 253, 0.8) !important; /* 3px light blue border */
+}
+
+.switch-small {
+  width: 40px !important;
+  height: 19px !important;
+  border-radius: 6px !important;
+}
+
+.switch-small .ant-switch-handle {
+  width: 18px !important;
+  height: 15px !important;
+  border-radius: 4px !important;
+  margin-top: -1px;
+}
+
+.switch-default {
+  width: 48px !important;
+  height: 24px !important;
+  border-radius: 10px !important;
+}
+
+.switch-default .ant-switch-handle {
+  width: 22px !important;
+  height: 20px !important;
+  border-radius: 8px !important;
+  margin-top: -1px;
+  margin-left: -2px;
+}
+
+.switch-large {
+  width: 56px !important;
+  height: 32px !important;
+  border-radius: 12px !important;
+}
+
+.switch-large .ant-switch-handle {
+  width: 26px !important;
+  height: 24px !important;
+  border-radius: 10px !important;
+  margin-left: -4px;
+}
+
+/* Estilos adicionales para los bordes de los estados */
+.custom-switch.ant-switch-checked {
+  background-color: #0778b1 !important;
+  border-color: #0778b1 !important;
+}
+
+.custom-switch.ant-switch-checked .ant-switch-handle {
+  border-color: #0778b1 !important;
+}
+
+/* Estilos específicos para cada interruptor */
+.switch-small-1 {
+  /* Personaliza los estilos aquí */
+}
+.switch-small-2 {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 4px #91c3fd !important;
+}
+.switch-small-2 .ant-switch-handle {
+}
+.switch-small-3 {
+  /* Personaliza los estilos aquí */
+}
+.switch-small-4 {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 4px #91c3fd !important;
+}
+.switch-small-4 .ant-switch-handle {
+}
+
+.switch-default-1 {
+  /* Personaliza los estilos aquí */
+}
+
+.switch-default-2 {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 4px #91c3fd !important;
+}
+.switch-default-2 .ant-switch-handle {
+  border: 2px solid #91c3fd !important;
+}
+.switch-default-3 {
+  /* Personaliza los estilos aquí */
+}
+.switch-default-3 .ant-switch-handle {
+  margin-left: -0.2px !important;
+}
+
+.switch-default-4 {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 4px #91c3fd !important;
+}
+.switch-default-4 .ant-switch-handle {
+  margin-left: -0.2px !important;
+}
+
+.switch-large-1 {
+  /* Personaliza los estilos aquí */
+}
+.switch-large-1 .ant-switch-handle {
+  margin-left: -8px !important;
+  margin-top: 1px;
+}
+
+.switch-large-2 {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 4px #91c3fd !important;
+}
+.switch-large-2 .ant-switch-handle {
+  margin-left: -8px !important;
+  margin-top: 1px;
+}
+.switch-large-3 {
+  /* Personaliza los estilos aquí */
+}
+
+.switch-large-3 .ant-switch-handle {
+  margin-left: 0.5px !important;
+  margin-top: 1px;
+}
+
+.switch-large-4 {
+  border-color: #91c3fd !important;
+  box-shadow: 0 0 0 4px #91c3fd !important;
+}
+.switch-large-4 .ant-switch-handle {
+  margin-left: 0.5px !important;
+}

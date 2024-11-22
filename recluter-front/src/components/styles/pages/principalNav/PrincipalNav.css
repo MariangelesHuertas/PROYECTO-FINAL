@@ -1,0 +1,363 @@
+.principal-nav {
+  font-family: Arial, sans-serif;
+  padding-top: 150px; /* Ajusta el contenido para que no se superponga con el header fijo */
+}
+.principal-nav2 {
+  font-family: Arial, sans-serif;
+  padding-top: 120px; /* Ajusta el contenido para que no se superponga con el header fijo */
+}
+
+.principal-nav-link:hover {
+  color: black; /* Cambia el color del texto a rojo cuando se pasa el cursor por encima */
+  font-weight: 600;
+}
+
+.principal-nav-header {
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0; /* Alinea el header con el borde superior */
+  left: 0; /* Alinea el header con el borde izquierdo */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho de la pantalla */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 30px;
+  padding-top: 60px;
+  margin-bottom: 20px; /* Este margen no es necesario porque el header es fijo */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  background-color: #fff; /* Añade un fondo para que no sea transparente */
+  z-index: 1000; /* Asegura que el header esté sobre otros elementos */
+}
+
+.principal-nav-logo {
+  width: 140px;
+  height: 54px;
+  margin-bottom: -10px;
+}
+
+.principal-nav-nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: 45px;
+}
+
+.principal-nav-nav2 {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin-left: 165px;
+}
+
+.principal-nav-link {
+  margin: 0 15px;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s;
+  position: relative;
+  text-decoration: none;
+  font-family: Inter;
+}
+
+.principal-nav-link.active {
+  color: #006497;
+  font-weight: bold;
+}
+
+.principal-nav-link.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #006497;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.principal-nav-action-buttons {
+  display: flex;
+  align-items: center;
+}
+.principal-nav-notify-button0 {
+  background-color: #fff;
+  color: #006497;
+  border: 1px solid #006497;
+  margin-left: 10px;
+  width: 206px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.principal-nav-notify-buttonS {
+  background-color: #fff;
+  color: #006497;
+  border: 1px solid #006497;
+  margin-left: 10px;
+  width: 206px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.principal-nav-notify-button {
+  background-color: #fff;
+  color: #006497;
+  border: 1px solid #006497;
+  margin-left: 10px;
+  width: 206px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.principal-nav-notify-buttonG {
+  background-color: #fff;
+  color: black;
+  border: 1px solid #E1E1E2;
+  margin-left: 10px;
+  width: 206px;
+  height: 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.principal-nav-notify-button2 {
+  background-color: #fff;
+  color: #006497;
+  border: 1px solid #006497;
+  margin-left: 10px;
+  width: 206px;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.principal-nav-bell-button-1 {
+  background-color: #fff;
+  color: #006497;
+  border: 1px solid #006497;
+  margin-left: 10px;
+  height: 44px;
+  width: 44px !important;
+}
+
+.principal-nav-notify-button0:hover,
+.principal-nav-bell-button:hover {
+  border-width: 2px;
+  border-color: white !important; /* Asegúrate de que se mantenga el color azul oscuro */
+  color: #00513F !important; /* Mantén el color de la letra */
+  background-color: #ffffff !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-buttonS:hover,
+.principal-nav-bell-button:hover {
+  border-width: 2px;
+  border-color: white !important; /* Asegúrate de que se mantenga el color azul oscuro */
+  color: #1C82BC !important; /* Mantén el color de la letra */
+  background-color: #ffffff !important; /* Mantén el fondo blanco */
+}
+
+.principal-nav-notify-button:hover,
+.principal-nav-bell-button-1:hover {
+  border-width: 2px;
+  border-color: #006497 !important; /* Asegúrate de que se mantenga el color azul oscuro */
+  color: #006497 !important; /* Mantén el color de la letra */
+  background-color: #ffffff !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-buttonG:hover {
+  border-width: 2px;
+  border-color: #E1E1E2 !important; /* Asegúrate de que se mantenga el color azul oscuro */
+  color: black !important; /* Mantén el color de la letra */
+  background-color: #E1E1E2 !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-button2:hover,
+.principal-nav-bell-button:hover {
+  border-width: 1px;
+  border-color: #006497 !important; /* Asegúrate de que se mantenga el color azul oscuro */
+  color: white !important; /* Mantén el color de la letra */
+  background-color: #1C82BC !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-button0:active,
+.principal-nav-bell-button:active {
+  border: none !important; /* Elimina el borde */
+  box-shadow:  0 0 0 4px #81BFEC !important; /* Añade un sombreado exterior de un azul más claro */
+  color: #00513F !important; /* Mantén el color de la letra */
+  background-color: white !important; /* Mantén el fondo blanco */
+}
+
+.principal-nav-notify-buttonS:active,
+.principal-nav-bell-button:active {
+  border: none !important; /* Elimina el borde */
+  box-shadow:  0 0 0 4px #81BFEC !important; /* Añade un sombreado exterior de un azul más claro */
+  color: #006497 !important; /* Mantén el color de la letra */
+  background-color: white !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-button:active,
+.principal-nav-bell-button-1:active {
+  border: none !important; /* Elimina el borde */
+  box-shadow:  0 0 0 4px #81BFEC !important; /* Añade un sombreado exterior de un azul más claro */
+  color: #006497 !important; /* Mantén el color de la letra */
+  background-color: #fff !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-buttonG:active,
+.principal-nav-bell-button-1:active {
+  border: none !important; /* Elimina el borde */
+  box-shadow:  0 0 0 4px #81BFEC !important; /* Añade un sombreado exterior de un azul más claro */
+  color: black !important; /* Mantén el color de la letra */
+  background-color: #fff !important; /* Mantén el fondo blanco */
+}
+.principal-nav-notify-button2:active,
+.principal-nav-bell-button:active {
+  border: none !important; /* Elimina el borde */
+  box-shadow:  0 0 0 4px #81BFEC !important; /* Añade un sombreado exterior de un azul más claro */
+  color: white !important; /* Mantén el color de la letra */
+  background-color: #006497 !important; /* Mantén el fondo blanco */
+}
+
+
+/* Para pantallas medianas a pequeñas */
+@media (max-width: 1092px) {
+  .principal-nav-header {
+    flex-direction: column;
+    padding-top: 80px; /* Ajuste del padding superior */
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+  }
+  .principal-nav {
+    font-family: Arial, sans-serif;
+    padding-top: 175px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+  .principal-nav2 {
+    font-family: Arial, sans-serif;
+    padding-top: 160px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+
+  .principal-nav-nav {
+    margin-left: 0;
+    margin-bottom: 10px;
+    justify-content: center; /* Centrar navegación */
+    width: 100%; /* Ocupa todo el ancho */
+  }
+
+  .principal-nav-action-buttons {
+    width: 100%; /* Ocupa todo el ancho */
+    justify-content: center; /* Centra los botones */
+  }
+
+  .principal-nav-notify-button,
+  .principal-nav-bell-button {
+    width: auto; /* Deja que los botones se adapten al contenido */
+    margin-left: 0;
+  }
+
+  .principal-nav-logo {
+    margin-bottom: 20px;
+    width: 120px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+    height: auto;
+  }
+}
+
+/* Para pantallas medianas a pequeñas */
+@media (max-width: 1023px) {
+  .principal-nav-header {
+    flex-direction: column;
+    padding-top: 80px; /* Ajuste del padding superior */
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+  }
+  .principal-nav {
+    font-family: Arial, sans-serif;
+    padding-top: 210px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+
+  .principal-nav-nav {
+    margin-left: 0;
+    margin-bottom: 10px;
+    justify-content: center; /* Centrar navegación */
+    width: 100%; /* Ocupa todo el ancho */
+  }
+
+  .principal-nav-action-buttons {
+    width: 100%; /* Ocupa todo el ancho */
+    justify-content: center; /* Centra los botones */
+  }
+  .principal-nav-bell-button {
+    margin-left: 10px;
+    height: 44px;
+    width: 44px !important;
+  }
+
+  .principal-nav-notify-button,
+  .principal-nav-bell-button {
+    width: auto; /* Deja que los botones se adapten al contenido */
+    margin-left: 0;
+  }
+  .principal-nav-notify-button0 {
+    margin-left: 10px;
+    width: 200px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .principal-nav-logo {
+    margin-bottom: 20px;
+    width: 120px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+    height: auto;
+  }
+}
+
+@media (max-width: 745px) {
+  .principal-nav2 {
+    font-family: Arial, sans-serif;
+    padding-top: 260px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+  .principal-nav {
+    font-family: Arial, sans-serif;
+    padding-top: 260px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+}
+
+@media (max-width: 572px){
+  .principal-nav {
+    font-family: Arial, sans-serif;
+    padding-top: 315px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .principal-nav-header {
+    padding-top: 90px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .principal-nav {
+    font-family: Arial, sans-serif;
+    padding-top: 325px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+
+  .principal-nav-logo {
+    width: 100px; /* Reducir aún más el tamaño del logo */
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .principal-nav-notify-button,
+  .principal-nav-bell-button {
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+
+  .principal-nav2 {
+    padding-top: 350px; /* Ajusta el contenido para que no se superponga con el header fijo */
+  }
+}
+
+
+/* Agrega los demás media queries según sea necesario */

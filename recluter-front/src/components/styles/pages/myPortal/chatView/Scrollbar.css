@@ -1,0 +1,27 @@
+/* Scrollbar.css */
+
+.custom-scrollbar {
+    scrollbar-color: #81BFEC #f5f5f5;
+  }
+  
+  /* Para navegadores basados en WebKit como Chrome, Safari, etc. */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px; /* Ancho del scrollbar */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Fondo del track */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #81BFEC; /* Color del thumb */
+    border: 3px solid #f5f5f5; /* Ancho del track y color de fondo del thumb */
+  }
+  
+  /* Para mostrar las flechas de scroll en los extremos */
+  .custom-scrollbar::-webkit-scrollbar-button {
+    background-color: black !important; /* Color de las flechas */
+    height: 16px; /* Tamaño de las flechas */
+    width: 16px;
+  }
+  

@@ -1,0 +1,18 @@
+.rating {
+  display: flex;
+}
+
+.star-icon {
+  margin-right: 3px; /* Espacio entre las estrellas */
+}
+
+.filled-star {
+  width: 21px; /* Tamaño de la estrella llena */
+  height: 21px;
+  margin-top: 3px;
+}
+
+.empty-star {
+  width: 26px; /* Tamaño de la estrella vacía */
+  height: 26px;
+}

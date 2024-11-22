@@ -1,0 +1,618 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql" // O el proveedor de tu base de datos (mysql, sqlite, etc.)
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model usuarios {
+  id                              Int                               @id @default(autoincrement())
+  usuario                         String?                           @db.VarChar(45)
+  contrasena                      String?                           @db.VarChar(100)
+  email                           String                            @unique @db.VarChar(45)
+  persona_id                      Int
+  tipo_usuario_id                 Int
+  pais_id                         Int?
+  estado                          String?                           @db.VarChar(45)
+  codigo_generado                 Int?
+  googleId                        String?
+  facebookId                      String?
+  token                           String?                           @db.VarChar(255)
+  imagen                          String?                           @db.VarChar(255)
+  imagen_banner                   String?                           @db.VarChar(255)
+  sobreMi                         String?                           @db.Text
+  cargo                           String?                           @db.VarChar(100)
+  meses_experiencia               Int?
+  ubicacion                       String?                           @db.VarChar(255)
+  link_valoracion                 String                            @unique @db.VarChar(255)
+  jornada                         String?                           @unique @db.VarChar(255)
+  modalidad                       String?                           @unique @db.VarChar(255)
+  personas                        personas?                         @relation(fields: [persona_id], references: [id], onDelete: Cascade)
+  tipos_usuarios                  tipos_usuarios?                   @relation(fields: [tipo_usuario_id], references: [id], onDelete: Cascade)
+  pais                            paises?                           @relation(fields: [pais_id], references: [id], onDelete: Cascade)
+  empresas                        empresas[]
+  valoraciones_usuarios           valoraciones_usuarios[]           @relation("ValoracionUsuario1")
+  valoraciones_usuarios2          valoraciones_usuarios[]           @relation("ValoracionUsuario2")
+  postulaciones                   postulaciones[]
+  postulaciones_guardadas         postulaciones_guardadas[]
+  experiencias_laborales_usuarios experiencias_laborales_usuarios[]
+  aptitudes_usuarios              aptitudes_usuarios[]
+  valoraciones_empresas           valoraciones_empresas[]
+  educacion_usuarios              educacion_usuarios[]
+  auditorias                      auditorias[]
+  soft_skills_usuarios            soft_skills_usuarios[]
+  idiomas_usuarios                idiomas_usuarios[]
+  cvs_usuarios                    cvs_usuarios[]
+  portafolios_usuario             portafolios_usuario[]
+  empresa_seguida                 empresa_seguida[]
+  createdAt                       DateTime                          @default(now()) @map("created_at")
+  updatedAt                       DateTime?                         @updatedAt @map("updated_at")
+  alertas                         alertas[]
+}
+
+model personas {
+  id               Int        @id @default(autoincrement())
+  nombre           String     @db.VarChar(45)
+  apellido_paterno String?    @db.VarChar(45)
+  apellido_materno String?    @db.VarChar(45)
+  usuarios         usuarios[]
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime?  @updatedAt @map("updated_at")
+}
+
+model tipos_usuarios {
+  id                      Int                       @id @default(autoincrement())
+  tipo_usuario            String                    @db.VarChar(45)
+  usuarios                usuarios[]
+  permisos_tipos_usuarios permisos_tipos_usuarios[]
+  createdAt               DateTime                  @default(now()) @map("created_at")
+  updatedAt               DateTime?                 @updatedAt @map("updated_at")
+}
+
+model tipos_permisos {
+  id        Int        @id @default(autoincrement())
+  tipo      String     @db.VarChar(45)
+  permisos  permisos[]
+  createdAt DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime?  @updatedAt @map("updated_at")
+}
+
+model permisos {
+  id                      Int                       @id @default(autoincrement())
+  tipo_permiso_id         Int
+  slug                    String                    @db.VarChar(45)
+  ruta                    String                    @db.VarChar(150)
+  descripcion             String                    @db.VarChar(45)
+  tipos_permisos          tipos_permisos            @relation(fields: [tipo_permiso_id], references: [id], onDelete: Cascade)
+  permisos_tipos_usuarios permisos_tipos_usuarios[]
+  createdAt               DateTime                  @default(now()) @map("created_at")
+  updatedAt               DateTime?                 @updatedAt @map("updated_at")
+}
+
+model permisos_tipos_usuarios {
+  id              Int            @id @default(autoincrement())
+  permiso_id      Int
+  tipo_usuario_id Int
+  permisos        permisos       @relation(fields: [permiso_id], references: [id], onDelete: Cascade)
+  tipos_usuarios  tipos_usuarios @relation(fields: [tipo_usuario_id], references: [id], onDelete: Cascade)
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime?      @updatedAt @map("updated_at")
+}
+
+model empresas {
+  id                    Int                               @id @default(autoincrement())
+  usuario_id            Int
+  empresa               String                            @db.VarChar(45)
+  sector_id             Int?
+  logo                  String?                           @db.VarChar(255)
+  banner                String?                           @db.VarChar(255)
+  pagina_web            String?                           @db.VarChar(100)
+  sede_fiscal           String?                           @db.VarChar(100)
+  tamanio               String?                           @db.VarChar(100)
+  descripcion           String?                           @db.Text
+  ubicacion             String?                           @db.VarChar(100)
+  usuarios              usuarios                          @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  sectores              sectores?                         @relation(fields: [sector_id], references: [id], onDelete: Cascade)
+  ofertas               ofertas[]
+  valoraciones_empresas valoraciones_empresas[]
+  experiencia_laboral   experiencias_laborales_usuarios[]
+  empresa_seguida       empresa_seguida[]
+  createdAt             DateTime                          @default(now()) @map("created_at")
+  updatedAt             DateTime?                         @updatedAt @map("updated_at")
+}
+
+model ofertas {
+  id                      Int                       @id @default(autoincrement())
+  empresa_id              Int
+  sector_id               Int
+  cargo                   String                    @db.VarChar(150)
+  descripcion             String                    @db.Text
+  tipo                    String                    @db.VarChar(50)
+  ubi_provincia           String                    @db.VarChar(250)
+  ubi_poblacion           String                    @db.VarChar(250)
+  sal_min                 Float
+  sal_max                 Float
+  abanico_salarial        String                    @db.VarChar(50)
+  anios_experiencia       Int
+  estudios_minimos        String                    @db.VarChar(150)
+  tipo_contrato           String                    @db.VarChar(150)
+  jornada_laboral         String                    @db.VarChar(150)
+  borrador                Boolean                   @default(false)
+  finalizada              Boolean                   @default(false)
+  dateApertura            DateTime?
+  dateFinalizada          DateTime?
+  killers_questions       killers_questions[]
+  aptitudes_oferta        aptitudes_oferta[]
+  palabras_clave_oferta   palabras_clave_oferta[]
+  soft_skills_oferta      soft_skills_oferta[]
+  postulaciones           postulaciones[]
+  postulaciones_guardadas postulaciones_guardadas[]
+  empresas                empresas                  @relation(fields: [empresa_id], references: [id], onDelete: Cascade)
+  sectores                sectores                  @relation(fields: [sector_id], references: [id], onDelete: Cascade)
+  createdAt               DateTime                  @default(now()) @map("created_at")
+  updatedAt               DateTime?                 @updatedAt @map("updated_at")
+  alertas_ofertas         alertas_ofertas[]
+}
+
+model aptitudes {
+  id                 Int                  @id @default(autoincrement())
+  aptitud            String               @db.VarChar(45)
+  aprobado           Boolean
+  aptitudes_oferta   aptitudes_oferta[]
+  createdAt          DateTime             @default(now()) @map("created_at")
+  updatedAt          DateTime?            @updatedAt @map("updated_at")
+  aptitudes_usuarios aptitudes_usuarios[]
+}
+
+model aptitudes_oferta {
+  id         Int       @id @default(autoincrement())
+  aptitud_id Int
+  oferta_id  Int
+  aptitudes  aptitudes @relation(fields: [aptitud_id], references: [id], onDelete: Cascade)
+  ofertas    ofertas   @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+}
+
+model palabras_claves {
+  id                    Int                     @id @default(autoincrement())
+  palabra               String                  @db.VarChar(45)
+  aprobado              Boolean
+  palabras_clave_oferta palabras_clave_oferta[]
+  palabras_clave_alerta palabras_clave_alerta[]
+  createdAt             DateTime                @default(now()) @map("created_at")
+  updatedAt             DateTime?               @updatedAt @map("updated_at")
+}
+
+model palabras_clave_oferta {
+  id               Int             @id @default(autoincrement())
+  palabra_clave_id Int
+  oferta_id        Int
+  palabras_claves  palabras_claves @relation(fields: [palabra_clave_id], references: [id], onDelete: Cascade)
+  ofertas          ofertas         @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  createdAt        DateTime        @default(now()) @map("created_at")
+  updatedAt        DateTime?       @updatedAt @map("updated_at")
+}
+
+model soft_skills {
+  id                     Int                      @id @default(autoincrement())
+  soft_skill             String                   @db.VarChar(45)
+  aprobado               Boolean
+  soft_skills_oferta     soft_skills_oferta[]
+  soft_skills_usuarios   soft_skills_usuarios[]
+  soft_skills_portafolio soft_skills_portafolio[]
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+}
+
+model soft_skills_oferta {
+  id            Int         @id @default(autoincrement())
+  oferta_id     Int
+  soft_skill_id Int
+  porcentaje    Int
+  soft_skills   soft_skills @relation(fields: [soft_skill_id], references: [id], onDelete: Cascade)
+  ofertas       ofertas     @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime?   @updatedAt @map("updated_at")
+}
+
+model soft_skills_usuarios {
+  id            Int         @id @default(autoincrement())
+  usuario_id    Int
+  soft_skill_id Int
+  porcentaje    Int
+  nivel         Int?
+  soft_skills   soft_skills @relation(fields: [soft_skill_id], references: [id], onDelete: Cascade)
+  usuarios      usuarios    @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  createdAt     DateTime    @default(now()) @map("created_at")
+  updatedAt     DateTime?   @updatedAt @map("updated_at")
+}
+
+model killers_questions {
+  id               Int                             @id @default(autoincrement())
+  oferta_id        Int
+  tipo_pregunta_id Int
+  pregunta         String                          @db.VarChar(250)
+  condiciones      condiciones_killers_questions[]
+  detalle_killers  detalle_killers_questions[]
+  ofertas          ofertas                         @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  tipos_preguntas  tipos_preguntas                 @relation(fields: [tipo_pregunta_id], references: [id], onDelete: Cascade)
+  createdAt        DateTime                        @default(now()) @map("created_at")
+  updatedAt        DateTime?                       @updatedAt @map("updated_at")
+}
+
+model condiciones_killers_questions {
+  id                 Int               @id @default(autoincrement())
+  killer_question_id Int
+  minimo             Int
+  maximo             Int
+  valor              String            @db.VarChar(150)
+  killers_questions  killers_questions @relation(fields: [killer_question_id], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now()) @map("created_at")
+  updatedAt          DateTime?         @updatedAt @map("updated_at")
+}
+
+model tipos_preguntas {
+  id          Int                 @id @default(autoincrement())
+  nombre_tipo String              @db.VarChar(150)
+  tipo        String              @db.VarChar(50)
+  killers     killers_questions[]
+  createdAt   DateTime            @default(now()) @map("created_at")
+  updatedAt   DateTime?           @updatedAt @map("updated_at")
+}
+
+model detalle_killers_questions {
+  id                 Int               @id @default(autoincrement())
+  killer_question_id Int
+  detalle            String            @db.VarChar(150)
+  correcto           Boolean
+  killers_questions  killers_questions @relation(fields: [killer_question_id], references: [id], onDelete: Cascade)
+  createdAt          DateTime          @default(now()) @map("created_at")
+  updatedAt          DateTime?         @updatedAt @map("updated_at")
+}
+
+model sectores {
+  id                                Int                               @id @default(autoincrement())
+  sector                            String                            @db.VarChar(250)
+  ofertas                           ofertas[]
+  exexperiencias_laborales_usuarios experiencias_laborales_usuarios[]
+  createdAt                         DateTime                          @default(now()) @map("created_at")
+  updatedAt                         DateTime?                         @updatedAt @map("updated_at")
+  empresas                          empresas[]
+}
+
+model postulaciones {
+  id                    Int                  @id @default(autoincrement())
+  usuario_id            Int
+  oferta_id             Int
+  cv_usuario_id         Int?
+  portafolio_usuario_id Int?
+  fase_postulacion_id   Int
+  usuarios              usuarios             @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  ofertas               ofertas              @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  cvs_usuarios          cvs_usuarios?        @relation(fields: [cv_usuario_id], references: [id], onDelete: Cascade)
+  portafolios_usuario   portafolios_usuario? @relation(fields: [portafolio_usuario_id], references: [id], onDelete: Cascade)
+  fases_postulaciones   fases_postulaciones  @relation(fields: [fase_postulacion_id], references: [id], onDelete: Cascade)
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+
+  @@unique([usuario_id, oferta_id])
+}
+
+model postulaciones_guardadas {
+  id         Int       @id @default(autoincrement())
+  usuario_id Int
+  oferta_id  Int
+  usuarios   usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  ofertas    ofertas   @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+}
+
+model valoraciones_usuarios {
+  id          Int       @id @default(autoincrement())
+  usuario_id  Int
+  usuarios    Int
+  valoracion  Decimal
+  observacion String?   @db.VarChar(250)
+  usuario     usuarios  @relation("ValoracionUsuario1", fields: [usuario_id], references: [id], onDelete: Cascade)
+  usuario2    usuarios  @relation("ValoracionUsuario2", fields: [usuarios], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime? @updatedAt @map("updated_at")
+
+  @@unique([usuario_id, usuarios])
+}
+
+model valoraciones_empresas {
+  id          Int       @id @default(autoincrement())
+  empresa_id  Int
+  valoracion  Decimal
+  usuario_id  Int
+  observacion String?   @db.VarChar(250)
+  empresas    empresas  @relation(fields: [empresa_id], references: [id], onDelete: Cascade)
+  usuarios    usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime? @updatedAt @map("updated_at")
+
+  @@unique([usuario_id, empresa_id])
+}
+
+model aptitudes_usuarios {
+  id         Int       @id @default(autoincrement())
+  aptitud_id Int
+  usuario_id Int
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+  usuarios   usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  aptitudes  aptitudes @relation(fields: [aptitud_id], references: [id], onDelete: Cascade)
+
+  @@unique([usuario_id, aptitud_id])
+}
+
+model experiencias_laborales_usuarios {
+  id                Int       @id @default(autoincrement())
+  empresa_id        Int?
+  usuario_id        Int
+  sector_id         Int?
+  cargo             String    @db.VarChar(55)
+  descripcion       String    @db.Text
+  nombre_empresa    String?   @db.VarChar(100)
+  fecha_inicio      DateTime
+  fecha_fin         DateTime
+  meses_experiencia Int
+  lugar_trabajo     String?   @db.VarChar(100)
+  nombre_sector     String?   @db.VarChar(100)
+  createdAt         DateTime  @default(now()) @map("created_at")
+  updatedAt         DateTime? @updatedAt @map("updated_at")
+
+  empresa empresas? @relation(fields: [empresa_id], references: [id], onDelete: Cascade)
+  usuario usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  sector  sectores? @relation(fields: [sector_id], references: [id], onDelete: Cascade)
+}
+
+model carreras {
+  id                 Int                  @id @default(autoincrement())
+  carrera            String
+  educacion_usuarios educacion_usuarios[]
+  createdAt          DateTime             @default(now()) @map("created_at")
+  updatedAt          DateTime?            @updatedAt @map("updated_at")
+}
+
+model centros_educativos {
+  id                 Int                  @id @default(autoincrement())
+  centro_educativo   String
+  ubicacion          String               @db.VarChar(45)
+  educacion_usuarios educacion_usuarios[]
+  createdAt          DateTime             @default(now()) @map("created_at")
+  updatedAt          DateTime?            @updatedAt @map("updated_at")
+}
+
+model tipos_educacion {
+  id                 Int                  @id @default(autoincrement())
+  tipo_educacion     String
+  educacion_usuarios educacion_usuarios[]
+  createdAt          DateTime             @default(now()) @map("created_at")
+  updatedAt          DateTime?            @updatedAt @map("updated_at")
+}
+
+model educacion_usuarios {
+  id                      Int                 @id @default(autoincrement())
+  tipo_educacion_id       Int?
+  centro_educativo_id     Int?
+  usuario_id              Int
+  carrera_id              Int?
+  fecha_inicio            DateTime
+  fecha_final             DateTime
+  nombre_centro_educativo String?             @db.VarChar(45)
+  carrera                 String?             @db.VarChar(45)
+  especialidad            String?             @db.VarChar(100)
+  ubicacion               String              @db.VarChar(100)
+  carreras                carreras?           @relation(fields: [carrera_id], references: [id], onDelete: Cascade)
+  centros_educativos      centros_educativos? @relation(fields: [centro_educativo_id], references: [id], onDelete: Cascade)
+  tipos_educacion         tipos_educacion?    @relation(fields: [tipo_educacion_id], references: [id], onDelete: Cascade)
+  createdAt               DateTime            @default(now()) @map("created_at")
+  updatedAt               DateTime?           @updatedAt @map("updated_at")
+  usuarios                usuarios?           @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+}
+
+model tipos_auditorias {
+  id         Int          @id @default(autoincrement())
+  nombre     String       @db.VarChar(45)
+  auditorias auditorias[]
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime?    @updatedAt @map("updated_at")
+}
+
+model auditorias {
+  id                Int              @id @default(autoincrement())
+  ip                String           @db.VarChar(45)
+  jsonentrada       String           @db.Text
+  jsonsalida        String           @db.Text
+  descripcion       String           @db.Text
+  accion            String           @db.VarChar(120)
+  ruta              String           @db.VarChar(45)
+  log               String           @db.Text
+  tabla             String           @db.VarChar(45)
+  pk_actualizado    Int
+  tipo_auditoria_id Int
+  usuario_id        Int
+  usuarios          usuarios         @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  tipos_auditorias  tipos_auditorias @relation(fields: [tipo_auditoria_id], references: [id], onDelete: Cascade)
+  createdAt         DateTime         @default(now()) @map("created_at")
+  updatedAt         DateTime?        @updatedAt @map("updated_at")
+}
+
+model tipos_alertas {
+  id        Int       @id @default(autoincrement())
+  tipo      String    @db.VarChar(45)
+  alertas   alertas[]
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+}
+
+model alertas {
+  id                    Int                     @id @default(autoincrement())
+  tipo_alerta_id        Int
+  usuario_id            Int
+  nombre                String                  @db.VarChar(150)
+  cargo                 String                  @db.VarChar(250)
+  temporalidad          String                  @db.VarChar(45)
+  activa                Boolean
+  alertas_ofertas       alertas_ofertas[]
+  palabras_clave_alerta palabras_clave_alerta[]
+  usuarios              usuarios                @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  tipos_alertas         tipos_alertas           @relation(fields: [tipo_alerta_id], references: [id], onDelete: Cascade)
+  createdAt             DateTime                @default(now()) @map("created_at")
+  updatedAt             DateTime?               @updatedAt @map("updated_at")
+}
+
+model alertas_ofertas {
+  id        Int @id @default(autoincrement())
+  alerta_id Int
+  oferta_id Int
+
+  alertas   alertas   @relation(fields: [alerta_id], references: [id], onDelete: Cascade)
+  ofertas   ofertas   @relation(fields: [oferta_id], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+}
+
+model palabras_clave_alerta {
+  id               Int             @id @default(autoincrement())
+  palabra_clave_id Int
+  alerta_id        Int
+  alertas          alertas         @relation(fields: [alerta_id], references: [id], onDelete: Cascade)
+  palabra_clave    palabras_claves @relation(fields: [palabra_clave_id], references: [id], onDelete: Cascade)
+  createdAt        DateTime        @default(now()) @map("created_at")
+  updatedAt        DateTime?       @updatedAt @map("updated_at")
+}
+
+model idiomas {
+  id        Int               @id @default(autoincrement())
+  idioma    String            @db.VarChar(45)
+  niveles   niveles_idiomas[]
+  createdAt DateTime          @default(now()) @map("created_at")
+  updatedAt DateTime?         @updatedAt @map("updated_at")
+}
+
+model niveles_idiomas {
+  id        Int       @id @default(autoincrement())
+  nivel     String    @db.VarChar(45)
+  idioma_id Int
+  idiomas   idiomas   @relation(fields: [idioma_id], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @updatedAt @map("updated_at")
+
+  idiomas_usuarios idiomas_usuarios[]
+}
+
+model idiomas_usuarios {
+  id              Int             @id @default(autoincrement())
+  nivel_idioma_id Int
+  usuario_id      Int
+  createdAt       DateTime        @default(now()) @map("created_at")
+  updatedAt       DateTime?       @updatedAt @map("updated_at")
+  niveles_idiomas niveles_idiomas @relation(fields: [nivel_idioma_id], references: [id], onDelete: Cascade)
+  usuarios        usuarios        @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+}
+
+model cvs_usuarios {
+  id             Int             @id @default(autoincrement())
+  usuario_id     Int
+  nombre         String          @db.VarChar(100)
+  nombre_archivo String          @db.VarChar(100)
+  cv             String          @db.VarChar(255)
+  default        Boolean
+  createdAt      DateTime        @default(now()) @map("created_at")
+  updatedAt      DateTime?       @updatedAt @map("updated_at")
+  usuarios       usuarios        @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  postulaciones  postulaciones[]
+}
+
+model portafolios_usuario {
+  id                     Int                      @id @default(autoincrement())
+  usuario_id             Int
+  nombre                 String                   @db.VarChar(100)
+  nombre_archivo         String                   @db.VarChar(100)
+  portafolio             String                   @db.VarChar(255)
+  default                Boolean
+  titulo                 String                   @db.VarChar(100)
+  descripcion            String                   @db.VarChar(100)
+  url                    String                   @db.Text
+  createdAt              DateTime                 @default(now()) @map("created_at")
+  updatedAt              DateTime?                @updatedAt @map("updated_at")
+  usuarios               usuarios                 @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  postulaciones          postulaciones[]
+  soft_skills_portafolio soft_skills_portafolio[]
+  archivos_portafolio    archivos_portafolio[]
+}
+
+model empresa_seguida {
+  id         Int       @id @default(autoincrement())
+  usuario_id Int
+  empresa_id Int
+  createdAt  DateTime  @default(now()) @map("created_at")
+  updatedAt  DateTime? @updatedAt @map("updated_at")
+  usuarios   usuarios  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+  empresas   empresas  @relation(fields: [empresa_id], references: [id], onDelete: Cascade)
+
+  @@unique([usuario_id, empresa_id])
+}
+
+model fases_postulaciones {
+  id            Int             @id @default(autoincrement())
+  fase          String          @db.VarChar(100)
+  prioridad     Int
+  seleccionado  Boolean         @default(false)
+  createdAt     DateTime        @default(now()) @map("created_at")
+  updatedAt     DateTime?       @updatedAt @map("updated_at")
+  postulaciones postulaciones[]
+}
+
+model soft_skills_portafolio {
+  id                    Int                 @id @default(autoincrement())
+  soft_skill_id         Int
+  portafolio_usuario_id Int
+  createdAt             DateTime            @default(now()) @map("created_at")
+  updatedAt             DateTime?           @updatedAt @map("updated_at")
+  soft_skills           soft_skills         @relation(fields: [soft_skill_id], references: [id], onDelete: Cascade)
+  portafolio_usuario    portafolios_usuario @relation(fields: [portafolio_usuario_id], references: [id], onDelete: Cascade)
+
+  @@unique([soft_skill_id, portafolio_usuario_id])
+}
+
+model archivos_portafolio {
+  id                    Int                 @id @default(autoincrement())
+  portafolio_usuario_id Int
+  titulo                String              @db.VarChar(100)
+  nombre_archivo        String              @db.VarChar(100)
+  archivo               String              @db.VarChar(255)
+  createdAt             DateTime            @default(now()) @map("created_at")
+  updatedAt             DateTime?           @updatedAt @map("updated_at")
+  portafolio_usuario    portafolios_usuario @relation(fields: [portafolio_usuario_id], references: [id], onDelete: Cascade)
+}
+
+model paises {
+  id       Int        @id @default(autoincrement())
+  pais     String     @unique @db.VarChar(45)
+  ciudades ciudades[]
+  usuarios usuarios[]
+}
+
+model ciudades {
+  id      Int     @id @default(autoincrement())
+  pais_id Int
+  ciudad  String  @db.VarChar(45)
+  capital Boolean
+  pais    paises  @relation(fields: [pais_id], references: [id])
+}

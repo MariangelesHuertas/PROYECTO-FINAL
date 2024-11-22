@@ -1,0 +1,39 @@
+
+  
+  .principal-nav-action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .bg-blue-500 {
+    background-color: #1890ff;
+  }
+  
+  .bg-blue-500:hover {
+    background-color: #40a9ff;
+  }
+  
+  .text-blue-500 {
+    color: #1890ff;
+  }
+  
+  .text-heading-md {
+    font-size: 20px;
+  }
+  
+  .custom-button-company {
+    border-radius: 4px;
+  }
+  
+  .rounded {
+    border-radius: 8px;
+  }
+  
+  .divider {
+    width: 1px; /* Ancho del divisor */
+    height: 40px; /* Altura del divisor, ajústalo según sea necesario */
+    background-color: #006497; /* Color del divisor */
+    margin-left: 28px; /* Espaciado horizontal alrededor del divisor */
+    margin-right: 28px;
+    margin-top: 31px;
+  }

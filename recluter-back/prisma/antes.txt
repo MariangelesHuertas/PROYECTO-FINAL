@@ -1,0 +1,71 @@
+datasource db {
+  provider = "postgresql" // O el proveedor de tu base de datos (mysql, sqlite, etc.)
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model personas {
+  id               Int      @id @default(autoincrement())
+  nombre           String   @db.VarChar(45)
+  apellido_paterno String   @db.VarChar(45)
+  apellido_materno String   @db.VarChar(45)
+  usuarios         usuarios[]
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime? @updatedAt @map("updated_at")
+}
+
+model usuarios {
+  id              Int      @id @default(autoincrement())
+  usuario         String   @db.VarChar(45)
+  contrasena      String   @db.VarChar(100)
+  persona_id      Int
+  tipo_usuario_id Int
+  personas        personas @relation(fields: [persona_id], references: [id])
+  tipos_usuarios  tipos_usuarios @relation(fields: [tipo_usuario_id], references: [id])
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime? @updatedAt @map("updated_at")
+}
+
+model tipos_usuarios {
+  id                   Int       @id @default(autoincrement())
+  tipo_usuario         String    @db.VarChar(45)
+  usuarios             usuarios[]
+  permisos_tipos_usuarios permisos_tipos_usuarios[]
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime? @updatedAt @map("updated_at")
+}
+
+model tipos_permisos {
+  id          Int       @id @default(autoincrement())
+  tipo        String    @db.VarChar(45)
+  permisos    permisos[]
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime? @updatedAt @map("updated_at")
+}
+
+model permisos {
+  id               Int       @id @default(autoincrement())
+  tipo_permiso_id  Int
+  slug             String    @db.VarChar(45)
+  ruta             String    @db.VarChar(150)
+  descripcion      String    @db.VarChar(45)
+  tipos_permisos   tipos_permisos @relation(fields: [tipo_permiso_id], references: [id])
+  permisos_tipos_usuarios permisos_tipos_usuarios[]
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime? @updatedAt @map("updated_at")
+}
+
+model permisos_tipos_usuarios {
+  id               Int       @id @default(autoincrement())
+  permiso_id       Int
+  tipo_usuario_id  Int
+  permisos         permisos @relation(fields: [permiso_id], references: [id])
+  tipos_usuarios   tipos_usuarios @relation(fields: [tipo_usuario_id], references: [id])
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime? @updatedAt @map("updated_at")
+}
+
+

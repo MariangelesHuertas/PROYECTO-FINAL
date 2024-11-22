@@ -1,0 +1,50 @@
+/* Calendar.css */
+.ant-picker-calendar {
+    width: 320px; /* Ajuste de ancho para que coincida con la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra similar a la imagen */
+  }
+  
+  .ant-picker-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+  }
+  
+  .ant-picker-calendar-header .ant-picker-calendar-year-select,
+  .ant-picker-calendar-header .ant-picker-calendar-month-select {
+    font-weight: 600; /* Texto en negrita */
+  }
+  
+  .ant-picker-calendar-header .ant-picker-calendar-prev-month-btn,
+  .ant-picker-calendar-header .ant-picker-calendar-next-month-btn {
+    font-size: 16px; /* Tamaño del icono */
+  }
+  
+  .ant-picker-cell {
+    height: 40px; /* Ajusta la altura de las celdas */
+  }
+  
+  .ant-picker-cell-in-view {
+    font-size: 14px; /* Tamaño de la fuente para los días */
+    color: rgba(0, 0, 0, 0.88); /* Color del texto */
+  }
+  
+  .ant-picker-cell-today .ant-picker-cell-inner::before {
+    border-color: #1677ff; /* Color del borde alrededor del día actual */
+  }
+  
+  .ant-picker-cell-selected .ant-picker-cell-inner {
+    background-color: #e6f4ff; /* Fondo del día seleccionado */
+    color: #1677ff; /* Texto en azul para el día seleccionado */
+  }
+  
+  .ant-picker-cell-inner {
+    border-radius: 50%; /* Hace que los días seleccionados tengan un fondo circular */
+  }
+  
+  .ant-picker-calendar-mode-switch {
+    display: none; /* Ocultar el botón de cambiar modo (año/mes) si no es necesario */
+  }
+  

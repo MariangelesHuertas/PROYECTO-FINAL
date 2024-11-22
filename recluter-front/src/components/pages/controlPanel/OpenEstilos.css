@@ -1,0 +1,68 @@
+/* Ocultar scrollbar y mantener funcionalidad de desplazamiento */
+.custom-table .ant-table-body {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    height: 146px; /* Altura del área desplazable */
+   
+  }
+  
+  .custom-table .ant-table-body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Opera */
+  }
+  
+  /* Estilos personalizados para la tabla */
+  .ant-table {
+    border-collapse: separate; /* Asegurar separación entre celdas */
+  }
+  
+  .ant-table-tbody > tr > td {
+    border-right: 1px solid #fff; /* Línea blanca entre columnas */
+    padding: 8px 16px; /* Padding personalizado para celdas */
+  }
+  
+  .ant-table-tbody > tr > td:last-child {
+    border-right: none; /* Eliminar la línea derecha en la última columna */
+  }
+  
+  .table-container {
+    max-height: 400px; /* Puedes ajustar esto según tus necesidades */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    overflow-x: hidden; /* Oculta el desplazamiento horizontal */
+    /* Estilo del fondo para el encabezado */
+    .ant-table-thead > tr > th {
+      background-color: #ffffff; /* Fondo blanco para el encabezado */
+      font-weight: bold;
+    }
+  }
+  .truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+ /* OpenEstilos.css */
+.custom-cell {
+  height: 20px; /* Ajusta según lo necesario */
+  line-height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.custom-table {
+  table-layout: fixed; /* Asegura que la tabla respete el ancho de las celdas */
+}
+
+.custom-table .ant-table-cell {
+  height: 7px; /* Asegura que la altura sea consistente */
+  padding: 0; /* Remueve el padding adicional */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
+  white-space: nowrap; /* Evita que el texto se desborde a múltiples líneas */
+  line-height: 1; /* Ajusta la altura de línea */
+}
+.custom-table .ant-table-cell {
+  padding: 0; /* Eliminar padding */
+  line-height: 1; /* Ajustar line-height */
+  height: 7px; /* Asegurar que la altura sea consistente */
+}
+
+  

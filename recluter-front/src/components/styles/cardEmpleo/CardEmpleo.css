@@ -1,0 +1,148 @@
+/* Estilos generales para ambos diseños */
+.card-container {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-empleo {
+  width: 480px;
+  /* max-width: 500px; /* Tamaño del primer modelo de carta */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumentar la intensidad del sombreado */
+  background-color: #ffffff;
+}
+
+.card-empleo .header {
+  display: flex;
+  align-items: center; /* Alinear verticalmente el avatar con el texto */
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.card-empleo .header .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.card-empleo .header .header-left .avatar {
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.card-empleo .header .header-text {
+  flex-grow: 1;
+  margin-left: 12px; /* Separar el avatar del texto */
+}
+
+.card-empleo .header-text h3 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.card-empleo .header-text h4 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-empleo .safety-icon {
+  font-size: 20px;
+}
+
+.card-empleo .job-details {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  padding-right: 50px;
+}
+
+.card-empleo .job-details .ant-col {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555555;
+  margin-right: 40px;
+}
+
+.card-empleo .job-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.card-empleo .job-stats .ant-col {
+  display: flex;
+  align-items: center;
+}
+
+.card-empleo .job-stats .ant-btn.custom-button {
+  background: none;
+  border: 1px solid #d9d9d9;
+  padding: -10px 5px;
+  display: flex;
+  align-items: center;
+  color: #555555;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.card-empleo .inscription-status {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.card-empleo .inscription-status .icon {
+  margin-right: 0px;
+}
+
+.card-empleo .inscription-status span:first-of-type {
+  font-weight: bold;
+  align-items: center;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.card-empleo .custom-steps {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: -308px;
+}
+
+.card-empleo .custom-steps .step {
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #d9d9d9;
+  margin-right: 6px;
+}
+
+.card-empleo .custom-steps .step.finished {
+  background-color: #0778B1;
+}
+
+.card-empleo .description {
+  margin-top: 6px;
+  color: #333333;
+  font-size: 14px;
+}
+
+.card-empleo .posted-time {
+  margin-top: 8px;
+  color: gray;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* Estilo específico para type4 */
+.card-empleo.type4 .header .header-right {
+  font-size: 12px;
+  color: gray;
+}

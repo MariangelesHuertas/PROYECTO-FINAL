@@ -1,0 +1,472 @@
+.empleo-recomendaciones-merere {
+    font-family: Arial, sans-serif;
+}
+
+.header-merere {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    padding-top: 60px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.logo-merere {
+    width: 140px;
+    height: 54px;
+    margin-bottom: -10px;
+}
+
+.nav-merere {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 100px;
+    flex-wrap: wrap;
+}
+
+.nav-link-merere {
+    margin: 0 15px;
+    padding: 10px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-link-merere.active-merere {
+    color: #006497;
+    font-weight: bold;
+}
+
+.nav-link-merere.active-merere::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #006497;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.action-buttons-merere {
+    display: flex;
+    align-items: center;
+}
+
+.notify-button-merere {
+    background-color: #fff;
+    color: #006497;
+    border: 1px solid #006497;
+    margin-left: 10px;
+    width: 206px;
+    height: 44px;
+    font-size: 16px;
+}
+
+.bell-button-merere {
+    background-color: #fff;
+    color: #006497;
+    border: 1px solid #006497;
+    margin-left: 10px;
+    height: 44px;
+}
+
+.search-bar-merere {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.tabs-merere {
+    padding: 20px;
+}
+
+.tab-links-merere {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.tab-links-merere2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tab-link-merere {
+    margin-right: 20px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #5F5F5F;
+    opacity: 0.7;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.tab-link-merere2 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #5F5F5F;
+    transition: all 0.3s;
+    font-weight: 500; /* Cambiar a font-weight: 500 para font-medium */
+}
+
+.tab-link-merere2.active-merere {
+    color: #0778B1;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 3px solid #006497;
+}
+
+.tab-link-merere.active-merere {
+    color: black;
+    font-weight: bold;
+    border-bottom: 3px solid #006497;
+}
+.tab-links-merere2::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    bottom: 0;
+    left: 0;
+}
+
+.tab-links-merere::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    bottom: 0;
+    left: 0;
+}
+
+.tab-content-merere {
+    padding: 10px 0;
+}
+
+.ant-select-selector {
+    border: none !important;
+}
+
+.icon-merere {
+    font-size: 24px;
+    color: #006497;
+    padding-right: 10px;
+}
+
+/* Estilos para los inputs */
+.search-input-merere:hover,
+.select-input-merere:hover,
+.city-input-merere:hover {
+    background-color: #e0e0e0; /* Gris un poco más oscuro */
+    border: 2px solid #ccc !important; /* Borde más grueso */
+}
+
+.search-input-merere:focus,
+.select-input-merere:focus,
+.city-input-merere:focus {
+    background-color: #fff; /* Fondo original */
+    border: 2px solid #81BFEC !important; /* Borde más grueso y de color #81BFEC */
+}
+
+/* Estilos para el botón */
+.search-button-merere:hover {
+    background-color: #0078A8; /* Azul ligeramente más claro */
+    border-color: #81BFEC !important; /* Borde del color #81BFEC */
+}
+
+.search-button-merere:active {
+    background-color: #006497; /* Vuelve al color original */
+    box-shadow: 0 0 0 2px #81BFEC !important; /* Borde de color #81BFEC por fuera */
+}
+.tab-link-merere {
+  position: relative;
+  color: black;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.tab-link-merere2 {
+    position: relative;
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+.tab-link-merere:hover {
+  color: red;
+}
+
+.tab-link-merere::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+.tab-link-merere2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.tab-link-merere:hover::after {
+  width: 100%;
+}
+
+  
+  .tab-link-merere:hover {
+    color: black;
+  }
+  
+  .tab-link-merere::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #E1E1E2;
+    transition: width 0.3s ease;
+  }
+  .tab-link-merere2::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #E1E1E2;
+    transition: width 0.3s ease;
+  }
+  
+  .tab-link-merere:hover::after {
+    width: 100%;
+  }
+  
+
+@media (max-width: 1200px) {
+    .search-input-merere {
+        width: 300px;
+    }
+
+    .select-input-merere {
+        width: 170px;
+        margin-left: 65px;
+    }
+
+    .city-input-merere {
+        width: 170px;
+    }
+
+    .logo-merere {
+        width: 140px;
+        height: 54px;
+        margin-bottom: -10px;
+    }
+
+    .header-merere {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-merere {
+        margin-left: 0;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .action-buttons-merere {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notify-button-merere {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .bell-button-merere {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 998px) {
+    .search-input-merere,
+    .select-input-merere,
+    .city-input-merere,
+    .search-button-merere {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .logo-merere {
+        width: 140px;
+        height: 54px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 873px) {
+    .search-input-merere {
+        width: 200px;
+    }
+
+    .select-input-merere {
+        width: 100px;
+        margin-left: 45px;
+    }
+
+    .city-input-merere {
+        width: 120px;
+        margin-left: -20px;
+    }
+}
+
+@media (max-width: 764px) {
+    .search-input-merere {
+        width: 170px;
+    }
+
+    .select-input-merere {
+        width: 70px;
+        margin-left: 28px;
+    }
+
+    .city-input-merere {
+        width: 90px;
+        margin-left: -42px;
+    }
+
+    .header-merere {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-merere {
+        margin-left: 0;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .action-buttons-merere {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notify-button-merere {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .bell-button-merere {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 631px) {
+    .search-input-merere {
+        width: 100px;
+    }
+
+    .select-input-merere {
+        width: 70px;
+        margin-left: -30px;
+    }
+
+    .city-input-merere {
+        width: 90px;
+        margin-left: -90px;
+    }
+}
+
+@media (max-width: 585px) {
+    .search-input-merere,
+    .select-input-merere,
+    .city-input-merere,
+    .search-button-merere {
+        width: 100%;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input-merere,
+    .select-input-merere,
+    .city-input-merere,
+    .search-button-merere {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .header-merere {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-merere {
+        margin-left: 0;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .action-buttons-merere {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notify-button-merere {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .bell-button-merere {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}
